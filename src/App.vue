@@ -1,6 +1,16 @@
 
 <script setup>
-import Portfolio from './components/Portfolio.vue';
+import Contact from './components/Contact.vue';
+import About from './components/About.vue';
+
+import { RouterLink, RouterView } from 'vue-router';
+import { ref } from 'vue';
+
+const isContactShown = ref(false);
+
+const scrollToTop = () =>{
+    window.scrollTo(0,0);
+  }
 </script>
 
 <template>
@@ -12,50 +22,41 @@ import Portfolio from './components/Portfolio.vue';
       <img src="./assets/images/logo2.png" alt="logo" class="h-10">
     </div>
     <div class="flex space-x-10 font-dmsans font-semibold text-pinkish gap-10">
-      <a href="###">HOME</a>
-      <a href="###">PORTFOLIO</a>
-      <a href="###">ABOUT</a>
-      <a href="###">CONTACT</a>
+      <a href="/#app">HOME</a>
+      <a href="/#portfolio">PORTFOLIO</a>
+      <RouterLink @click="scrollToTop()" to="/about">ABOUT</RouterLink>
+      <a href="###" @click="isContactShown = !isContactShown">CONTACT</a>
     </div>
   </nav>
 <!-- END OF NAVIGATION BAR -->
 
+  <Transition name="slide-fade">
+    <Contact :isContactShown="isContactShown"/>
+  </Transition>
 
-  <!-- START OF BODY -->
-  <div class="flex relative w-full h-screen items-center justify-between px-32">
-
-    <!-- START OF MAPLE -->
-
-    <div style="background-image: url(maple.png); background-repeat: no-repeat;" class="h-[50vh] w-[52vw] absolute right-0 top-0"> </div>
-    <div style="background-image: url(maple2.png); background-repeat: no-repeat; background-size: 100%;" class="h-1/2 w-[41vw] absolute left-0 bottom-0"> </div>
-   
-      <!-- END OF MAPLE -->
-
-      <div class="flex w-full h-full absolute top-0 right-0 left-0 bottom-0 px-32 py-40">
-        <div class="flex justify-start items-center w-1/2 h-full">
-          <img src="./assets/images/profile.jpg" alt="profile" class="border-4 border-pinkish/50 h-4/5 rounded-md z-40">
-        </div>
-    
-
-        <!-- START OF NAMES -->
-
-      <div class="flex flex-col justify-center items-end text-pinkish text-5xl z-40 font-bold w-1/2 h-full">
-
-        <div class="flex flex-col items-end w-fit">
-          <p class="leading-8">MARIA ANDRHEA IVHON</p>
-          <p class="leading-8 opacity-50">MARIA ANDRHEA IVHON</p>
-          <p class="leading-8 opacity-20">MARIA ANDRHEA IVHON</p>
-
-          <div class="flex w-full text-xs text-black font-medium pt-2">
-            <p>an aspiring front-end developer / UI/UX designer / Graphic Designer.</p>
-          </div>
-        </div>      
-      </div>
-      <!-- END OF NAMES -->
-    </div>
-  </div>
-  <!-- END OF BODY -->
-
-  <Portfolio/>
+  <RouterView/>
 </div>
 </template>
+
+<style>
+html{
+  scroll-behavior: smooth;
+}
+
+.slide-fade-enter-active {
+  transition: all 200ms cubic-bezier(0.75, 0, 1, 1);
+}
+
+.slide-fade-leave-active {
+  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.slide-fade-enter-from {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+</style>
