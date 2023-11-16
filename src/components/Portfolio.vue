@@ -10,7 +10,7 @@
                 </div>
                 <p class="flex leading-3 opacity-50 justify-start w-full -mt-5">PORTFOLIO</p>
         </div>
- <div class="flex gap-5 px-32 py-10 w-full h-full">
+ <div class="flex gap-5 px-32 py-10 w-full">
     <a v-for="(uidesign,index) in uidesigns" :key="index" class="w-1/4 relative" :href="uidesign.href" target="_blank">
         <div class="absolute bg-black/0 inset-0 hover:bg-black/30 transition-color duration-150 ease-in-out text-white/0 hover:text-white/100 flex items-end text-xl pl-5">
             {{uidesign.name}}
@@ -19,7 +19,7 @@
         <div style="background-repeat: no-repeat;
         background-size: 100%;
         background-position: center;"
-        class="w-full h-[25vh]" 
+        class="w-full h-52" 
         :style="{ 'background-image': 'url(' + uidesign.url + ')' }">
             
         </div>
