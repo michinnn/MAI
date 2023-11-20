@@ -1,6 +1,7 @@
 <script setup>
     import Portfolio from './components/Portfolio.vue';
 </script>
+
 <template>
     <div>
           <!-- START OF BODY -->
