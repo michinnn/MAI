@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen w-full">
+    <div class="w-full">
         
         <div id="portfolio" class="flex flex-col text-pinkish jusify-center items-center font-medium w-full text-[110px] px-56 py-10">
                 <p class="flex leading-3 opacity-50 justify-end w-full -mb-5">PORTFOLIO</p>
@@ -73,25 +73,26 @@
 
 <script setup>
 import { ref } from 'vue';
+const base = import.meta.env.BASE_URL;
 
 const uidesigns = ref([
-    {name:"Attendance System", url:"/uidesigns/attendancesystem.png", href: "https://www.behance.net/gallery/184483719/Attendance-System-Website/modules/1042477149"},
-    {name:"E-Commerce", url:"/uidesigns/datesfruitph.png", href:"https://www.behance.net/gallery/184482817/E-Commerce-UI-Design/modules/1042472751"},
-    {name:"Attendance System - Mobile", url:"/uidesigns/attendancesystem-mobile-lobby@3x.png", href: "https://www.behance.net/gallery/184483521/Attendance-System-UI-Design/modules/1042476249"},
-    {name:"Upcoming Events", url:"/uidesigns/I7-website@2x.png", href: "https://www.behance.net/gallery/184483299/Upcoming-Events-UI-Design/modules/1042475027"},
+    {name:"Attendance System", url:`${base}/uidesigns/attendancesystem.png`, href: "https://www.behance.net/gallery/184483719/Attendance-System-Website/modules/1042477149"},
+    {name:"E-Commerce", url:`${base}/uidesigns/datesfruitph.png`, href:"https://www.behance.net/gallery/184482817/E-Commerce-UI-Design/modules/1042472751"},
+    {name:"Attendance System - Mobile", url:`${base}/uidesigns/attendancesystem-mobile-lobby@3x.png`, href: "https://www.behance.net/gallery/184483521/Attendance-System-UI-Design/modules/1042476249"},
+    {name:"Upcoming Events", url:`${base}/uidesigns/I7-website@2x.png`, href: "https://www.behance.net/gallery/184483299/Upcoming-Events-UI-Design/modules/1042475027"},
 ])
 
 const logodesigns = ref([
-    {name:"MAI-SAN logo", url:"/logodesign/l1.png", href:""},
-    {name:"Cesz Creates logo", url:"/logodesign/l2.png", href:""},
-    {name:"MK Crochet Creations logo", url:"/logodesign/l3.png", href:""},
-    {name:"Sneaky Clothing logo", url:"/logodesign/l4.png", href:""},
+    {name:"MAI-SAN logo", url:`${base}/logodesign/l1.png`, href:""},
+    {name:"Cesz Creates logo", url:`${base}/logodesign/l2.png`, href:""},
+    {name:"MK Crochet Creations logo", url:`${base}/logodesign/l3.png`, href:""},
+    {name:"Sneaky Clothing logo", url:`${base}/logodesign/l4.png`, href:""},
 ])
 
 const digitalarts = ref([
-    {name:"Mrs. Mary Chibi", url:"/digitalarts/d1.png", href:""},
-    {name:"ZJ chibi", url:"/digitalarts/d2.png", href:""},
-    {name:"VeeWise chibi", url:"/digitalarts/d3.png", href:""},
-    {name:"OhMyV33nus chibi", url:"/digitalarts/d4.png", href:""},
+    {name:"Mrs. Mary Chibi", url:`${base}/digitalarts/d1.png`, href:""},
+    {name:"ZJ chibi", url:`${base}/digitalarts/d2.png`, href:""},
+    {name:"VeeWise chibi", url:`${base}/digitalarts/d3.png`, href:""},
+    {name:"OhMyV33nus chibi", url:`${base}/digitalarts/d4.png`, href:""},
 ])
 </script>

@@ -11,6 +11,8 @@ const isContactShown = ref(false);
 const scrollToTop = () =>{
     window.scrollTo(0,0);
   }
+
+const base = import.meta.env.BASE_URL;
 </script>
 
 <template>
@@ -22,10 +24,10 @@ const scrollToTop = () =>{
       <img src="./assets/images/logo2.png" alt="logo" class="h-10">
     </div>
     <div class="flex space-x-10 font-dmsans font-semibold text-pinkish gap-10">
-      <a href="/#app">HOME</a>
-      <a href="/#portfolio">PORTFOLIO</a>
+      <a :href="`${base}#app`">HOME</a>
+      <a :href="`${base}#portfolio`">PORTFOLIO</a>
       <RouterLink @click="scrollToTop()" to="/about">ABOUT</RouterLink>
-      <a href="###" @click="isContactShown = !isContactShown">CONTACT</a>
+      <div class="cursor-pointer" @click="isContactShown = !isContactShown">CONTACT</div>
     </div>
   </nav>
 <!-- END OF NAVIGATION BAR -->
@@ -35,6 +37,7 @@ const scrollToTop = () =>{
   </Transition>
 
   <RouterView/>
+
 </div>
 </template>
 
