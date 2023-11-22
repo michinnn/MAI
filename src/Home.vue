@@ -14,9 +14,9 @@
 
   <!-- END OF MAPLE -->
 
-  <div class="flex w-full h-full absolute top-0 right-0 left-0 bottom-0 px-32 py-40">
-    <div class="flex justify-start items-center w-1/2 h-full">
-      <img src="./assets/images/profile.jpg" alt="profile" class="border-4 border-pinkish/50 h-4/5 rounded-md z-40">
+  <div class="flex flex-col lg:flex-row justify-center w-full h-full absolute top-0 right-0 left-0 bottom-0 px-32 py-40">
+    <div class="flex justify-start items-center lg:w-1/2 h-full">
+      <img src="./assets/images/profile.jpg" alt="profile" class="border-4 border-pinkish/50 lg:h-4/5 rounded-md z-40">
     </div>
 
 
